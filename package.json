@@ -1,0 +1,28 @@
+{
+  "name": "sewingwebsite",
+  "version": "1.0.0",
+  "description": "A guide to considerations a crafter should think about when starting a sewing project, with specifications and definitions included.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjerryc/SewingWebsite.git"
+  },
+  "keywords": [
+    "Sewing",
+    "Crafts",
+    "Fabric",
+    "Clothing"
+  ],
+  "author": "Jerry Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjerryc/SewingWebsite/issues"
+  },
+  "homepage": "https://github.com/cjerryc/SewingWebsite#readme",
+  "workspaces": [
+        "packages/*"
+    ]
+}

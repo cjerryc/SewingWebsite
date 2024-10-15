@@ -1,0 +1,10 @@
+
+:root {
+    --color-text: white;
+
+    --body-background-color: rgb(207, 123, 54);
+    --body-link-unvisited: rgb(143, 73, 179);
+    --body-link-visited: rgb(217, 27, 141);
+    --body-link-hover: rgb(33, 98, 96);
+  }
+  

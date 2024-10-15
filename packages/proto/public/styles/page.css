@@ -1,0 +1,24 @@
+header {
+    /* header background color and text color */
+    color: var(--color-text);
+    background-color: rgb(126, 203, 203);
+    border: 1px solid olivedrab;
+    text-align: center;
+  }
+  body{
+    color: var(--color-text);
+    background-color: var(--body-background-color);
+    /* unvisited link */
+    a:link {
+      color: var(--body-link-unvisited);
+    }
+    /* visited link */
+      a:visited {
+      color: var(--body-link-visited);
+    }
+
+    /* mouse over link */
+      a:hover {
+      color: var(--body-link-hover);
+    }
+  }

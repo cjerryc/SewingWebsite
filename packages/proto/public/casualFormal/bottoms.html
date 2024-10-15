@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
 
     <svg class="icon">
       <use href="/icons/bottoms.svg#icon-bottoms" />
@@ -10,10 +15,7 @@
   </head>
 
   <body>
-    <article>
-      <header>
-        <a href="../index.html">&larr; Sewing a Garment</a>
-      </header>
+    <article class="container">
       <section class="bottoms"> 
         <h2>Bottoms</h2>
         <dl>
@@ -45,24 +47,25 @@
                 </dd>
         </dl>
       </section>
-      <nav class="casualFormalWear">
-        <a href="tops.html">
-          <dl>
-            <dt>Pairs well with tops.</dt>
-          </dl>
-        </a>
-        <a href="coats.html">
-          <dl>
-            <dt>Pairs well with coats.</dt>
-          </dl>
-        </a>
-        <a href="jackets.html">
-            <dl>
-              <dt>Pairs well with jackets.</dt>
-            </dl>
-          </a>
-      </nav>
     </article>
+
+    <nav class="casualFormalWear">
+      <a href="tops.html">
+        <dl>
+          <dt>Pairs well with tops.</dt>
+        </dl>
+      </a>
+      <a href="coats.html">
+        <dl>
+          <dt>Pairs well with coats.</dt>
+        </dl>
+      </a>
+      <a href="jackets.html">
+          <dl>
+            <dt>Pairs well with jackets.</dt>
+          </dl>
+        </a>
+    </nav>
     
   </body>
 </html>

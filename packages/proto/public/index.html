@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&display=swap" rel="stylesheet">
+  
     <header>
       <h1>Sewing Garments</h1>
       <p>Making a Piece From Start to Finish</p>
+      <link rel="stylesheet" href="/styles/reset.css" />
       <link rel="stylesheet" href="/styles/page.css" />
       <link rel="stylesheet" href="/styles/tokens.css" />
 
@@ -12,65 +17,62 @@
         <use href="/icons/sewingMachine.svg#icon-sewingMachine" />
       </svg>
     </header>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&display=swap" rel="stylesheet">
+    <header class="header">
+      <section>
+        <h2>Type of Garments</h2>
+        <ul class="ulnobullets">
+          <li>
+              <a href="casualFormal/coats.html">Coats</a>
+          </li>
+          <li><a href="casualFormal/jackets.html">Jackets</a></li>
+          <li><a href="casualFormal/tops.html">Tops</a></li>
+          <li><a href="casualFormal/bottoms.html">Bottoms</a></li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Seasonal Pieces</h2> 
+        <ul class="ulnobullets">
+          <li><a href="seasonal/fall.html">Fall</a></li>
+          <li><a href="seasonal/winter.html">Winter</a></li>
+          <li><a href="seasonal/spring.html">Spring</a></li>
+          <li><a href="seasonal/summer.html">Summer</a></li>
+        </ul>
+      </section>
+      
+      <section>
+          <h2>Fabrics</h2>
+          <ul class="ulnobullets">
+            <li><a href="fabrics/light.html">Lightweight</a></li>
+            <li><a href="fabrics/heavy.html">Heavyweight</a></li>
+            <li><a href="fabrics/sheen.html">Sheen</a></li>
+          </ul>
+        </section>
+      
+      <section>
+          <h2>Notions and Embellishments</h2>
+          <ul class="ulnobullets">
+            <li><a href="notions/buttons.html">Buttons</a></li>
+            <li><a href="notions/zippers.html">Zippers</a></li>
+            <li><a href="notions/piping.html">Piping</a></li>
+          </ul>
+        </section>
+      
+        <section>
+          <h2>Tools for the Job</h2>
+          <ul class="ulnobullets">
+            <li><a href="tools/needles.html">Appropriate Needles for the Job</a></li>
+            <li><a href="tools/iron.html">All About Ironing and Pressing</a></li>
+            <li><a href="tools/patterns.html">Great Patterns</a></li>
+          </ul>
+        </section>
+    </header>
   </head>
 
 
-  <body>
-    <section>
-      <h2>Type of Garments</h2>
-      <ul>
-        <li>
-            <a href="casualFormal/coats.html">Coats</a>
-        </li>
-        <li><a href="casualFormal/jackets.html">Jackets</a></li>
-        <!-- <li>By Rail Venice &rarr; Florence</li> -->
-        <li><a href="casualFormal/tops.html">Tops</a></li>
-        <!-- <li>By Rail Florence &rarr; Rome</li> -->
-        <li><a href="casualFormal/bottoms.html">Bottoms</a></li>
-        <!-- <li><a href="flight/return.html">Fly FCO &rarr; SFO</a></li> -->
-      </ul>
-    </section>
-    
-    <section>
-      <h2>Seasonal Pieces</h2> 
-      <ul>
-        <li><a href="seasonal/fall.html">Fall</a></li>
-        <li><a href="seasonal/winter.html">Winter</a></li>
-        <li><a href="seasonal/spring.html">Spring</a></li>
-        <li><a href="seasonal/summer.html">Summer</a></li>
-      </ul>
-    </section>
-    
-    <section>
-        <h2>Fabrics</h2>
-        <ul>
-          <li><a href="fabrics/light.html">Lightweight</a></li>
-          <li><a href="fabrics/heavy.html">Heavyweight</a></li>
-          <li><a href="fabrics/sheen.html">Sheen</a></li>
-        </ul>
-      </section>
-    
-    <section>
-        <h2>Notions and Embellishments</h2>
-        <ul>
-          <li><a href="notions/buttons.html">Buttons</a></li>
-          <li><a href="notions/zippers.html">Zippers</a></li>
-          <li><a href="notions/piping.html">Piping</a></li>
-        </ul>
-      </section>
-    
-      <section>
-        <h2>Tools for the Job</h2>
-        <ul>
-          <li><a href="tools/needles.html">Appropriate Needles for the Job</a></li>
-          <li><a href="tools/iron.html">All About Ironing and Pressing</a></li>
-          <li><a href="tools/patterns.html">Great Patterns</a></li>
-        </ul>
-      </section>
+  <body class="container">
+    <img src="images/landingImage2.jpg" alt="Fabric and Thread">
+    <p>An informal almanac on sewing garments from the bolt to the hanger.</p>
   </body>
   
 </html>

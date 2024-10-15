@@ -21,5 +21,35 @@
     --font-weight-normal: 400;
     --font-weight-light: 200;
     --font-weight-bold: 700;
+
+    --ulnobullets-padding: 0;
+    --ulnobullets-margin: 0;
+    --ulnobullets-listStyle: None;
+
+    --size-spacing-small: 0.25rem;
+    --size-spacing-medium: 0.5rem;
+    --size-spacing-large: 1rem;
+    --size-spacing-xlarge: 2rem;
+
+    --grid-column-start: 1;
+    --grid-column-end: 6;
+    --grid-row-start-h1: 1;
+    --grid-row-end-h1: 2;
+    --grid-row-start-h2: 2;
+    --grid-row-end-h2: 3;
+
+    --header-display: flex;
+    --header-align-items: baseline;
+    --header-justify-content: space-between; 
+
+    --container-display: grid;
+    --container-template-columns: 0.3fr 0.3fr 0.3fr;
+    --container-grid-column-gap: 10px;
+    --container-grid-row-gap: 15px;
+
+    --svg-square-length: 5em;
+    --svg-align: top;
+    --svg-fill: currentColor;
+    --svg-display: inLine;
   }
   

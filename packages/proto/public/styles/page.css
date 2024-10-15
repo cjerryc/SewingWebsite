@@ -1,11 +1,14 @@
 header {
     /* header background color and text color */
+    font-family: var(--font-family-display);
+    line-height: var(--font-line-height-display);
     color: var(--color-text);
-    background-color: rgb(126, 203, 203);
-    border: 1px solid olivedrab;
-    text-align: center;
+    background-color: var(--header_background-color);
+    border: var(--header-border);
+    text-align: var(--header-text-align);
   }
   body{
+    font-family: var(--font-family-body);
     color: var(--color-text);
     background-color: var(--body-background-color);
     /* unvisited link */
@@ -21,4 +24,11 @@ header {
       a:hover {
       color: var(--body-link-hover);
     }
+  }
+  svg.icon {
+    display: inline;
+    height: 5em;
+    width: 5em;
+    vertical-align: top;
+    fill: currentColor;
   }

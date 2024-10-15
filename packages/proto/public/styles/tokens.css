@@ -2,9 +2,24 @@
 :root {
     --color-text: white;
 
+    --font-family-display: Prata, Merriweather, serif;
+    --header_background-color: rgb(126, 203, 203);
+    --header-border: 3px solid rgb(40, 137, 137);
+    --header-text-align: center;
+
+
     --body-background-color: rgb(207, 123, 54);
     --body-link-unvisited: rgb(143, 73, 179);
     --body-link-visited: rgb(217, 27, 141);
     --body-link-hover: rgb(33, 98, 96);
+
+    --font-family-body: Lora, "Bitstream Charter", sans-serif;
+    --font-line-height-body: 1.5;
+    --font-line-height-compact: 1.25;
+    --font-line-height-display: 1.125;
+
+    --font-weight-normal: 400;
+    --font-weight-light: 200;
+    --font-weight-bold: 700;
   }
   

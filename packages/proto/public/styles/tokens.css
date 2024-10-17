@@ -43,9 +43,10 @@
     --header-justify-content: space-between; 
 
     --container-display: grid;
-    --container-template-columns: 0.3fr 0.3fr 0.3fr;
+    --container-template-columns: 0.4fr 0.2fr 0.4fr;
     --container-grid-column-gap: 10px;
     --container-grid-row-gap: 15px;
+    --container-align-items: center;
 
     --svg-square-length: 5em;
     --svg-align: top;

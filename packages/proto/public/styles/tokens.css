@@ -1,19 +1,18 @@
 
 :root {
-    --color-text: white;
-
+    --color-text: #1e0546;
     --font-family-display: Prata, Merriweather, serif;
-    --header_background-color: rgb(126, 203, 203);
-    --header-border: 3px solid rgb(40, 137, 137);
+    --header_background-color: #aad7fc;
+    --header-border: 3px solid #c7e2fa;
     --header-text-align: center;
 
 
-    --body-background-color: rgb(207, 123, 54);
-    --body-link-unvisited: rgb(143, 73, 179);
-    --body-link-visited: rgb(217, 27, 141);
-    --body-link-hover: rgb(33, 98, 96);
+    --body-background-color: #87c3f5;
+    --body-link-unvisited: #600e6d;
+    --body-link-visited: #350a3b;
+    --body-link-hover: #8f2f9c;
 
-    --font-family-body: Lora, "Bitstream Charter", sans-serif;
+    --font-family-body: Lora, "Bitstream Charter", serif;
     --font-line-height-body: 1.5;
     --font-line-height-compact: 1.25;
     --font-line-height-display: 1.125;
@@ -31,6 +30,7 @@
     --size-spacing-large: 1rem;
     --size-spacing-xlarge: 2rem;
 
+    /* TODO: move non-attribute portions and grid specifcs into page.css, no need for tokens */
     --grid-column-start: 1;
     --grid-column-end: 6;
     --grid-row-start-h1: 1;
@@ -40,7 +40,7 @@
 
     --header-display: flex;
     --header-align-items: baseline;
-    --header-justify-content: space-between; 
+    --header-justify-content: center; 
 
     --container-display: grid;
     --container-template-columns: 0.4fr 0.2fr 0.4fr;

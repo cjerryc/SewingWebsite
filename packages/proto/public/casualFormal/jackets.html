@@ -5,41 +5,85 @@
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
 
-    <header>
+    <header class="header">
       <a href="../index.html">&larr; Sewing a Garment</a>
     </header>
 
-    <svg class="icon">
-      <use href="/icons/jackets.svg#icon-jackets" />
-    </svg>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/jackets.svg#icon-jackets" />
+      </svg>
+      <h2>Jackets</h2>
+      <svg class="icon">
+        <use href="/icons/jackets.svg#icon-jackets" />
+      </svg>
+    </header>
+
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement
+      });
+    </script>
   </head>
 
   <body>
     <article class="container">
       <section class="jackets"> 
-        <h2>Jackets</h2>
-        <dl>
-            <dt>Suit</dt>
-                <dd>Designed to be worn as part of a matching set with pants made from the same fabric. It is typically made of finer fabrics such as wool or silk blends. Suit jackets are more formal in appearance. 
-                    These jackets are a staple in both business and formal settings.</dd>
-                    <dd> <li>Suit jackets have strong structural construction, allowing for more refined silhouettes.</li>
-                        <li>Collars: Typically single-breasted.</li>
-                        <li>Suit Jackets are lined in slippery fabrics such as silk or polyester for ease of slip on and off. Suit Jackets may opt to have different hardware and notions.</li>
-                    </dd>
-            <dt>Fleece</dt>
-                <dd>A synthetic, insulating fabric jacket popular for its lightweight and moisture-wicking properties. 
-                    These jackets are popular in colder, humid environments.</dd>
-                    <dd> <li>Provides warmth without weight, but prone to pilling and difficult to machine-wash. Linings are recommended to prevent excess heat and lingering odors.</li></dd>
-            <dt>Denim</dt>
-                <dd>Heavyweight cotton canvas jackets or great durability and ease of cleaning.</dd>
-                <dd> <li>Construction typically follows that of a suit jacket without lining or structuring.</li>
-                    <li>Notions: Hardware usually includes metal rivets and buttons to reinforce pockets. Traditionally worn in heavier-duty uses.</li></dd>
-            <dt>Leather</dt>
-                <dd>Heavyweight animal hide jackets of various finishes.</dd>
-                <dd> <li>Linings: Synthetic or silk linings make for a more breathable leather jacket.</li>
-                    <li>Notions: Hardware such as buttons are popular for a more polished look.</li>
-                    <li>Leather jackets are wind and water-resistant; however, they should avoid excess water and moisture to increase longevity.</li></dd>
-        </dl>
+
+        <description-elem>
+          <span slot="item">Suit</span>
+          <p slot="description">
+            Designed to be worn as part of a matching set with pants made from the same fabric. It is typically made of finer fabrics such as wool or silk blends. Suit jackets are more formal in appearance. 
+                    These jackets are a staple in both business and formal settings.</p>
+            <ul slot="info">
+              <li>Suit jackets have strong structural construction, allowing for more refined silhouettes.</li>
+              <li>Collars: Typically single-breasted.</li>
+              <li>Suit Jackets are lined in slippery fabrics such as silk or polyester for ease of slip on and off. Suit Jackets may opt to have different hardware and notions.</li>
+            </ul>
+        </description-elem>
+
+        <description-elem>
+          <span slot="item">Fleece</span>
+          <p slot="description">
+            A synthetic, insulating fabric jacket popular for its lightweight and moisture-wicking properties. 
+                    These jackets are popular in colder, humid environments.</p>
+            <ul slot="info">
+              <li>Provides warmth without weight, but prone to pilling and difficult to machine-wash. Linings are recommended to prevent excess heat and lingering odors.</li>
+            </ul>
+        </description-elem>
+
+        <description-elem>
+          <span slot="item">Denim</span>
+          <p slot="description">
+            Heavyweight cotton canvas jackets or great durability and ease of cleaning.</p>
+            <ul slot="info">
+              <li>Construction typically follows that of a suit jacket without lining or structuring.</li>
+              <li>Notions: Hardware usually includes metal rivets and buttons to reinforce pockets. Traditionally worn in heavier-duty uses.</li>
+            </ul>
+        </description-elem>
+
+        <description-elem>
+          <span slot="item">Leather</span>
+          <p slot="description">
+            Heavyweight animal hide jackets of various finishes.</p>
+            <ul slot="info">
+              <li>Linings: Synthetic or silk linings make for a more breathable leather jacket.</li>
+              <li>Notions: Hardware such as buttons are popular for a more polished look.</li>
+              <li>Leather jackets are wind and water-resistant; however, they should avoid excess water and moisture to increase longevity.</li>
+            </ul>
+        </description-elem>
+
       </section>
     </article>
     <nav class="casualFormalWear">

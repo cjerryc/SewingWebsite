@@ -2,18 +2,17 @@ let darkmode = localStorage.getItem('darkmode')
 const themeSwitch = document.getElementById('darkModeToggle')
 
 const enableDarkmode = () => {
-    document.body.classList.add('body-dark-mode')
-    // document.head.classList.add('header-dark')
+    document.body.classList.add('dark-mode')
     localStorage.setItem('darkmode', 'active')
 }
 
 const disableDarkmode = () => {
-    document.body.classList.remove('body-dark-mode')
-    // document.head.classList.remove('header-dark')
+    document.body.classList.remove('dark-mode')
     localStorage.setItem('darkmode', null)
 }
 
 if (darkmode === 'active'){
+    document.getElementById('darkModeToggle').checked = true;
     enableDarkmode()
 }
 

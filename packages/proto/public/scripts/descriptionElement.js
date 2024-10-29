@@ -15,9 +15,7 @@ export class descriptionElement extends HTMLElement {
     font-family: var(--font-family-body);
     color: var(--color-text);
     background-color: var(--body-background-color);
-    background: linear-gradient(217deg, rgba(163,128,218,.8), rgba(132,214,229,0) 70.71%),
-    linear-gradient(127deg, rgba(137,240,218,.8), rgba(244,169,218,0) 70.71%),
-    linear-gradient(336deg, rgba(238,122,145,.8), rgba(238,145,122,0) 70.71%);
+    background: var(--panel-gradient);
     padding: var(--size-spacing-medium);
 
     border-radius: 5px;
@@ -28,8 +26,6 @@ export class descriptionElement extends HTMLElement {
     font-family: var(--font-family-display);
     line-height: var(--font-line-height-display);
     color: var(--color-text);
-    // background-color: var(--header_background-color);
-    // border: var(--header-border);
     text-align: var(--header-text-align);
   }`;
 

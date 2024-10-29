@@ -4,21 +4,7 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-    <header class="header">
-      <svg class="icon">
-        <use href="/icons/coats.svg#icon-coats" />
-      </svg>
-      <h2>Coats</h2>
-      <svg class="icon">
-        <use href="/icons/coats.svg#icon-coats" />
-      </svg>
-    </header>
-    
-
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
     <script type="importmap">
       {
         "imports": {
@@ -37,6 +23,19 @@
   </head>
 
   <body>
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/coats.svg#icon-coats" />
+      </svg>
+      <h2>Coats</h2>
+      <svg class="icon">
+        <use href="/icons/coats.svg#icon-coats" />
+      </svg>
+    </header>
+
     <article>
       <section class="coats"> 
 
@@ -93,5 +92,13 @@
           </dl>
         </a>
     </nav>
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
   </body>
 </html>

@@ -23,7 +23,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_descriptionElements = require("./pages/descriptionElements");
-var import_descriptionElements_svc = require("./services/descriptionElements-svc");
+var import_descriptionElements_svc = __toESM(require("./services/descriptionElements-svc"));
+var import_mongo = require("./services/mongo");
+(0, import_mongo.connect)("sewing");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
@@ -38,8 +40,9 @@ app.get(
   "/casualFormal/:clothingId",
   (req, res) => {
     const { clothingId } = req.params;
-    const data = (0, import_descriptionElements_svc.getdescriptionElement)(clothingId);
-    const page = new import_descriptionElements.descriptionElementPage(data);
-    res.set("Content-Type", "text/html").send(page.render());
+    import_descriptionElements_svc.default.get(clothingId).then((data) => {
+      const page = new import_descriptionElements.descriptionElementPage(data);
+      res.set("Content-Type", "text/html").send(page.render());
+    });
   }
 );

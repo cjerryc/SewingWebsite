@@ -7,6 +7,7 @@ export class descriptionElementPage {
 
   constructor(data: descriptionElement) {
     this.data = data;
+    console.log(data)
   }
 
   render() {

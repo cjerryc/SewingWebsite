@@ -1,8 +1,11 @@
 import express, { Request, Response } from "express";
 import { descriptionElementPage } from "./pages/descriptionElements";
-import { getdescriptionElement } from "./services/descriptionElements-svc";
+import descriptionElement from "./services/descriptionElements-svc";
+import { connect } from "./services/mongo";
 
-// export * from "./descriptionElements";
+
+// Connect to sewing MongoDB
+connect("sewing");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,13 +21,24 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-app.get(
-  "/casualFormal/:clothingId",
-  (req: Request, res: Response) => {
+// Generate HTML
+app.get("/casualFormal/:clothingId",(req: Request, res: Response) => {
     const { clothingId } = req.params;
-    const data = getdescriptionElement(clothingId);
-    const page = new descriptionElementPage(data);
-
-    res.set("Content-Type", "text/html").send(page.render());
+    descriptionElement.get(clothingId).then((data) => {
+      const page = new descriptionElementPage(data);
+      res.set("Content-Type", "text/html").send(page.render());
+    })
   }
 );
+
+// RETURNS MONGODB STORED DATA
+// app.get("/api/casualFormals/:clothingId", (req: Request, res: Response) => {
+//   const { clothingId } = req.params;
+
+//   descriptionElement.get(clothingId).then((data) => {
+//     const page = new descriptionElementPage(data);
+//     res
+//       .set("Content-Type", "text/html")
+//       .send(page.render());
+//   });
+// });

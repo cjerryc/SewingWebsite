@@ -18,21 +18,25 @@ var __copyProps = (to, from, except, desc) => {
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var descriptionElements_svc_exports = {};
 __export(descriptionElements_svc_exports, {
-  getdescriptionElement: () => getdescriptionElement
+  default: () => descriptionElements_svc_default
 });
 module.exports = __toCommonJS(descriptionElements_svc_exports);
-const descriptionelement = {
-  item: "Blouse",
-  description: "A feminine top.",
-  info: [
-    "some pretty words about blouses.",
-    "more words about this garment."
-  ]
-};
-function getdescriptionElement(_) {
-  return descriptionelement;
+var import_mongoose = require("mongoose");
+const decriptionElementSchema = new import_mongoose.Schema(
+  {
+    item: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true },
+    info: [String]
+  },
+  { collection: "decriptionElements" }
+);
+const descriptionElementModel = (0, import_mongoose.model)("Profile", decriptionElementSchema);
+function index() {
+  return descriptionElementModel.find();
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  getdescriptionElement
-});
+function get(item) {
+  return descriptionElementModel.find({ item }).then((list) => list[0]).catch((err) => {
+    throw `${item} Not Found`;
+  });
+}
+var descriptionElements_svc_default = { index, get };

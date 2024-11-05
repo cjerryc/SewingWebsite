@@ -25,11 +25,14 @@ var import_express = __toESM(require("express"));
 var import_descriptionElements = require("./pages/descriptionElements");
 var import_descriptionElements_svc = __toESM(require("./services/descriptionElements-svc"));
 var import_mongo = require("./services/mongo");
+var import_casualFormal = __toESM(require("./routes/casualFormal"));
 (0, import_mongo.connect)("sewing");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
+app.use(import_express.default.json());
+app.use("/api/casualFormal", import_casualFormal.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });

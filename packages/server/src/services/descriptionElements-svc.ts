@@ -11,19 +11,6 @@ const decriptionElementSchema = new Schema<descriptionElement>(
   );
   const descriptionElementModel = model<descriptionElement>("Profile", decriptionElementSchema);
 
-
-// const descriptionelement = {
-//     item: "Blouse",
-//     description: "A feminine top.",
-//     info: ["some pretty words about blouses.",
-//         "more words about this garment."
-//     ]
-// }
-  // export function getdescriptionElement(_: string) {
-  //   // return descriptionelement object
-  //   return descriptionelement;
-  // }
-
   function index(): Promise<descriptionElement[]> {
     return descriptionElementModel.find();
   }
@@ -35,5 +22,30 @@ const decriptionElementSchema = new Schema<descriptionElement>(
         throw `${item} Not Found`;
       });
   }
+
+  function create(json: descriptionElement): Promise<descriptionElement> {
+    const t = new descriptionElementModel(json);
+    return t.save();
+  }
   
-  export default { index, get };
+  function update(
+    item: String,
+    descriptionelement: descriptionElement
+  ): Promise<descriptionElement> {
+    return descriptionElementModel.findOneAndUpdate({ item }, descriptionelement, {
+      new: true
+    }).then((updated) => {
+      if (!updated) throw `${item} not updated`;
+      else return updated as descriptionElement;
+    });
+  }
+
+  function remove(item: String): Promise<void> {
+    return descriptionElementModel.findOneAndDelete({ item }).then(
+      (deleted) => {
+        if (!deleted) throw `${item} not deleted`;
+      }
+    );
+  }
+
+  export default { index, get, create, update, remove };

@@ -39,4 +39,23 @@ function get(item) {
     throw `${item} Not Found`;
   });
 }
-var descriptionElements_svc_default = { index, get };
+function create(json) {
+  const t = new descriptionElementModel(json);
+  return t.save();
+}
+function update(item, descriptionelement) {
+  return descriptionElementModel.findOneAndUpdate({ item }, descriptionelement, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${item} not updated`;
+    else return updated;
+  });
+}
+function remove(item) {
+  return descriptionElementModel.findOneAndDelete({ item }).then(
+    (deleted) => {
+      if (!deleted) throw `${item} not deleted`;
+    }
+  );
+}
+var descriptionElements_svc_default = { index, get, create, update, remove };

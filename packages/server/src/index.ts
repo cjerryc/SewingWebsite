@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { descriptionElementPage } from "./pages/descriptionElements";
 import descriptionElement from "./services/descriptionElements-svc";
 import { connect } from "./services/mongo";
+import descriptionElements from "./routes/casualFormal";
 
 
 // Connect to sewing MongoDB
@@ -12,6 +13,8 @@ const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
 
 app.use(express.static(staticDir));
+app.use(express.json());
+app.use("/api/casualFormal", descriptionElements);
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");

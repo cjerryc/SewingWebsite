@@ -1,13 +1,44 @@
 import { css, html, shadow } from "@calpoly/mustang";
 
 export class descriptionElement extends HTMLElement {
+  get src() {
+    return this.getAttribute("src");
+  }
+  
+  connectedCallback() {
+    if (this.src) this.hydrate(this.src);
+  }
+
+  hydrate(url) {
+    fetch(url)
+      .then((res) => {
+        if (res.status !== 200) throw `Status: ${res.status}`;
+        return res.json();
+      })
+      .then((json) => this.renderSlots(json))
+      .catch((error) =>
+        console.log(`Failed to render data ${url}:`, error)
+      );
+  }
+  
+  renderSlots(json) {
+    const entries = Object.entries(json);
+    const toSlot = ([key, value]) =>
+      html`<span slot="${key}">${value}</span>`
+  
+    const fragment = entries.map(toSlot);
+    this.replaceChildren(...fragment);
+  }
+
   static template = html`
     <template>
       <section>
         <h3><slot name="item">item name</slot></h3>
         <slot name="description"> item description </slot>
-        <slot name="info"> information </slot>
+        <ul>
+        <li><slot name="info"> information </slot></li>
         </section>
+        </ul>
   </template>
   `;
 
@@ -33,7 +64,6 @@ export class descriptionElement extends HTMLElement {
     super();
     shadow(this)
       .template(descriptionElement.template)
-    //   .styles(reset.styles, descriptionElement.styles);
     .styles(descriptionElement.styles);
   }
 }

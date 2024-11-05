@@ -33,15 +33,3 @@ app.get("/casualFormal/:clothingId",(req: Request, res: Response) => {
     })
   }
 );
-
-// RETURNS MONGODB STORED DATA
-// app.get("/api/casualFormals/:clothingId", (req: Request, res: Response) => {
-//   const { clothingId } = req.params;
-
-//   descriptionElement.get(clothingId).then((data) => {
-//     const page = new descriptionElementPage(data);
-//     res
-//       .set("Content-Type", "text/html")
-//       .send(page.render());
-//   });
-// });

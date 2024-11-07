@@ -4,20 +4,25 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/sheen.svg#icon-sheen" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
   </head>
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/sheen.svg#icon-sheen" />
+      </svg>
+      <h2>Sheen</h2>
+      <svg class="icon">
+        <use href="/icons/sheen.svg#icon-sheen" />
+      </svg>
+    </header>
+
+    <article>
       <section class="sheen"> 
-        <h2>Sheen</h2>
         <p>Sheen may be defined as a quality of fabric that has a smooth surface and a shiny luster that reflects light.
           Sheen may be a subtle way to add flair to formal wear such as dresses, gowns, and evening wear. Sheen is a natural quality
           of lustrous fibers and preserved by light-refracting weaves.
@@ -38,5 +43,13 @@
       </a>
     </nav>
     
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+
   </body>
 </html>

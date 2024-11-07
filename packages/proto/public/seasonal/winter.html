@@ -4,20 +4,26 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+  </head>
 
+  <body>
     <header>
       <a href="../index.html">&larr; Sewing a Garment</a>
     </header>
 
-    <svg class="icon">
-      <use href="/icons/winter.svg#icon-winter" />
-    </svg>
-  </head>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/winter.svg#icon-winter" />
+      </svg>
+      <h2>Winter</h2>
+      <svg class="icon">
+        <use href="/icons/winter.svg#icon-winter" />
+      </svg>
+    </header>
 
-  <body>
-    <article class="container">
+    <article>
       <section class="winter"> 
-        <h2>Winter</h2>
         <p>Winter represents reflection, dormacy, and silence. Winter is a time to bundle up in warm layers agains the harsh elements. As such, clothing
             during this season should be layered responsibly to shield oneself from the wet and cold.
         </p>
@@ -42,5 +48,13 @@
         </a>
     </nav>
   
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+
   </body>
 </html>

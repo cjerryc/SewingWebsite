@@ -4,20 +4,26 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
 
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/buttons.svg#icon-buttons" />
-    </svg>
   </head>
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/buttons.svg#icon-buttons" />
+      </svg>
+      <h2>Buttons</h2>
+      <svg class="icon">
+        <use href="/icons/buttons.svg#icon-buttons" />
+      </svg>
+    </header>
+    
+    <article>
       <section class="buttons"> 
-        <h2>Buttons</h2>
         <p>Buttons are a popular method of fastening an opening of a garment closed. Buttons come in all shapes and sized, but typically have a standardized width between
             sewing holes for easier machine attachment.
         </p>
@@ -36,6 +42,14 @@
         </dl>
       </a>
     </nav>
+    
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
 
   </body>
 </html>

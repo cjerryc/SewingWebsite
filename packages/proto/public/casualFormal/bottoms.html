@@ -4,48 +4,56 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement
+      });
+    </script>
+  </head>
 
+  <body>
     <header>
       <a href="../index.html">&larr; Sewing a Garment</a>
     </header>
 
-    <svg class="icon">
-      <use href="/icons/bottoms.svg#icon-bottoms" />
-    </svg>
-  </head>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/bottoms.svg#icon-bottoms" />
+      </svg>
+      <h2>Bottoms</h2>
+      <svg class="icon">
+        <use href="/icons/bottoms.svg#icon-bottoms" />
+      </svg>
+    </header>
 
-  <body>
-    <article class="container">
+    <article>
       <section class="bottoms"> 
-        <h2>Bottoms</h2>
-        <dl>
-          <dt>Shorts</dt>
-            <dd>A knee-length or less than knee-length pair of trousers.</dd>
-                <dd> <li>Shorts may be made of many different types of fabrics, depending on the use.</li>
-                    <li>Heavier duty fabrics such as denim or thick-weave polyester are suitable for outdoor activities.</li>
-                    <li>Acryclic blends are popular for exercise clothing.</li>
-                </dd>
-          <dt>Trousers</dt>
-            <dd>An outer garment covering each leg separately and usually extending from the waist to the ankle.</dd>
-                <dd> <li>Trousers range from formal to casual, spanning all different types of fabrics, patterns, prints.</li>
-                </dd>
-          <dt>Jeans</dt>
-            <dd>A pair of durable twilled cotton cloth used especially for sportswear and work clothes.</dd>
-                <dd> <li>Jeans are heavyweight and heavy-duty bottoms, suitable for informal or semi-casual wear.</li>
-                    <li>The durable material makes this a suitable choice for outdoor activities.</li>
-                    <li>Traditionally worn by prospectors and workers, this is also a popular choice for those who opt to keep tools close.</li>
-                </dd>
-          <dt>Slacks</dt>
-            <dd>Trousers especially for casual wear.</dd>
-                <dd> <li>Loose fitting and less formal than suit Trousers.</li>
-                    <li>May be made of a variety of synthetic or natural fibers.</li>
-                </dd>
-          <dt>Chinos</dt>
-            <dd>A usually khaki cotton or synthetic-fiber twill of the type used for military uniforms.</dd>
-                <dd> <li>Cotton twill fabric makes chinos lightweight and versatile.</li>
-                    <li>May be dressed up or down.</li>
-                </dd>
-        </dl>
+
+        <description-elem src="/api/casualFormal/Shorts">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Trousers">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Jeans">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Slacks">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Chinos">
+        </description-elem>
       </section>
     </article>
 
@@ -66,6 +74,14 @@
           </dl>
         </a>
     </nav>
-    
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+
   </body>
 </html>

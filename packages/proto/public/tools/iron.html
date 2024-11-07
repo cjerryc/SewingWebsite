@@ -5,21 +5,26 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/ironing.svg#icon-ironing" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
   </head>
 
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/ironing.svg#icon-ironing" />
+      </svg>
+      <h2>Ironing</h2>
+      <svg class="icon">
+        <use href="/icons/ironing.svg#icon-ironing" />
+      </svg>
+    </header>
+
+    <article>
       <section class="ironing"> 
-        <h2>Ironing</h2>
         <p>Ironing and pressing is key to elevating a garment during construction. In doing so, we lay seams and hems flat, lend 
             the garment more structure, and smooth out wrinkels in the body.
         </p>
@@ -39,6 +44,14 @@
       </a>
     </nav>
   
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+    
   </body>
 </html>
 

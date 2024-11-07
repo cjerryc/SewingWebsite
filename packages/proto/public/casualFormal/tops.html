@@ -4,43 +4,55 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/tops.svg#icon-tops" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement
+      });
+    </script>
   </head>
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/tops.svg#icon-tops" />
+      </svg>
+      <h2>Tops</h2>
+      <svg class="icon">
+        <use href="/icons/tops.svg#icon-tops" />
+      </svg>
+    </header>
+
+    <article>
       <section class="tops"> 
-        <h2>Tops</h2>
-        <dl>
-            <dt>Button-Ups</dt>
-                <dd>A shirt characterized by a full-length button closure from the collar to the hem, allowing for a polished and professional appearance. 
-                    These shirts are a staple in both business and formal settings.</dd>
-                    <dd> <li>Full Front Panel Button Placket: Buttons run from the top to the bottom, so the shirt may be fully buttoned or partially open.</li>
-                        <li>Collars: Square and Pointed are typical of Button-ups.</li></dd>
-            <dt>Button-Downs</dt>
-                <dd>A shirt characterized by a full-length button closure from the collar to the hem with extra buttons on the collar, allowing for a polished and professional appearance. 
-                    These shirts are a staple in both business and formal settings.</dd>
-                    <dd> <li>Full Front Panel Button Placket: Buttons run from the top to the bottom, so the shirt may be fully buttoned or partially open.</li>
-                        <li>Collars: Square and Pointed are typical of Button-Downs. There are additional, smaller buttons on the front panel to fasten down the collar onto the main body piece.</li></dd>
-            <dt>T-Shirts</dt>
-                <dd>Typically lightweight, breathable, and stretchy, these informal shirts are ideal for casual wear.</dd>
-                <dd> <li>Sleeves: Sleeves may be pointed or round, true-to-proportion or dropped depending on the style. T-shirt sleeves are usually short sleeves.</li>
-                    <li>Collars: T-shirts do not feature collars.</li></dd>
-            <dt>Casual Shirts</dt>
-                <dd>Typically lightweight, breathable, and a step-down from more formal shirts like the Button-up or Button-down, these informal shirts are ideal for casual wear.</dd>
-                <dd> <li>Sleeves: Sleeves may be short sleeves or long sleeves.</li>
-                    <li>Colors and Patterns: Casual shirts enjoy more freedom in the variety of colors and patterns available, as compared to its formal counterparts.</li>
-                    <li>Collars: Casual Shirts may have collars, or round or v-necklines.</li></dd>
-        </dl>
+
+        <description-elem src="/api/casualFormal/Button-Ups">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Button-Downs">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/T-Shirts">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Casual Shirts">
+        </description-elem>
       </section>
     </article>
+    
     <nav class="casualFormalWear">
       <a href="bottoms.html">
         <dl>
@@ -58,5 +70,14 @@
           </dl>
         </a>
     </nav>
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+
   </body>
 </html>

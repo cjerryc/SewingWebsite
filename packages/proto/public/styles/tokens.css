@@ -1,19 +1,28 @@
 
 :root {
-    --color-text: white;
-
+    --color-text: #1e0546;
     --font-family-display: Prata, Merriweather, serif;
-    --header_background-color: rgb(126, 203, 203);
-    --header-border: 3px solid rgb(40, 137, 137);
+    --header_background-color: #aad7fc;
+    --header-border: 3px solid #c7e2fa;
+    --top-header-gradient: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3f87a6);
+    --border-header-gradient: linear-gradient(to bottom, #f69d3c, #3f87a6,#f69d3c) 1 100%;
     --header-text-align: center;
+    --header-gradient: linear-gradient(0.25turn, #3f87a6, #f69d3c, #ebf8e1, #f69d3c, #3f87a6);
 
 
-    --body-background-color: rgb(207, 123, 54);
-    --body-link-unvisited: rgb(143, 73, 179);
-    --body-link-visited: rgb(217, 27, 141);
-    --body-link-hover: rgb(33, 98, 96);
+    --body-background-color: #87c3f5;
+    --body-gradient: linear-gradient(217deg, rgba(163,128,218,.8), rgba(132,214,229,0) 70.71%),
+    linear-gradient(127deg, rgba(137,240,218,.8), rgba(244,169,218,0) 70.71%),
+    linear-gradient(336deg, rgba(238,122,145,.8), rgba(238,145,122,0) 70.71%);
+    --body-link-unvisited: #600e6d;
+    --body-link-visited: #350a3b;
+    --body-link-hover: #8f2f9c;
 
-    --font-family-body: Lora, "Bitstream Charter", sans-serif;
+    --panel-gradient: linear-gradient(217deg, rgba(163,128,218,.8), rgba(132,214,229,0) 70.71%),
+    linear-gradient(127deg, rgba(137,240,218,.8), rgba(244,169,218,0) 70.71%),
+    linear-gradient(336deg, rgba(238,122,145,.8), rgba(238,145,122,0) 70.71%);
+
+    --font-family-body: Lora, "Bitstream Charter", serif;
     --font-line-height-body: 1.5;
     --font-line-height-compact: 1.25;
     --font-line-height-display: 1.125;
@@ -31,6 +40,7 @@
     --size-spacing-large: 1rem;
     --size-spacing-xlarge: 2rem;
 
+    /* TODO: move non-attribute portions and grid specifcs into page.css, no need for tokens */
     --grid-column-start: 1;
     --grid-column-end: 6;
     --grid-row-start-h1: 1;
@@ -40,7 +50,7 @@
 
     --header-display: flex;
     --header-align-items: baseline;
-    --header-justify-content: space-between; 
+    --header-justify-content: center; 
 
     --container-display: grid;
     --container-template-columns: 0.4fr 0.2fr 0.4fr;
@@ -54,3 +64,17 @@
     --svg-display: inLine;
   }
   
+  body.dark-mode {
+    --body-link-unvisited: rgb(240, 240, 223);
+    --body-link-visited: rgb(214, 214, 205);
+    --body-link-hover: rgb(242, 242, 236);
+    --color-text: rgb(240, 240, 223);
+    --body-gradient: linear-gradient(217deg, rgba(12, 1, 30, 0.8),rgba(1, 25, 32, 0.2)70.71%),
+    linear-gradient(127deg, rgba(1, 29, 23, 0.8), rgba(30, 1, 19, 0.2) 70.71%),
+    linear-gradient(336deg, rgba(9, 0, 2, 0.8), rgba(16, 4, 0, 0.2)70.71%);
+    --panel-gradient: linear-gradient(217deg, rgba(36, 15, 68, 0.8),rgba(17, 73, 90, 0.2)70.71%),
+    linear-gradient(127deg, rgba(9, 61, 50, 0.8), rgba(73, 6, 47, 0.2) 70.71%),
+    linear-gradient(336deg, rgba(90, 27, 40, 0.8), rgba(55, 21, 10, 0.2)70.71%);
+    --header-gradient: linear-gradient(0.25turn, #082b3c, #3c250b, #3f370c, #3c250b, #082b3c);
+    --background-color: black;
+  }

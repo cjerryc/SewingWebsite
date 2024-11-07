@@ -4,36 +4,50 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/coats.svg#icon-coats" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement
+      });
+    </script>
   </head>
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/coats.svg#icon-coats" />
+      </svg>
+      <h2>Coats</h2>
+      <svg class="icon">
+        <use href="/icons/coats.svg#icon-coats" />
+      </svg>
+    </header>
+
+    <article>
       <section class="coats"> 
-        <h2>Coats</h2>
-        <dl>
-            <dt>Overcoat</dt>
-                <dd>A long, warm coat that's worn over other clothing to protect the wearer from the elements. 
-                    These coats are a staple in both business and formal settings.</dd>
-                    <dd> <li>Usually made from high-quality wool.</li>
-                        <li>Collars: Can be single or double-breasted.</li>
-                    </dd>
-            <dt>Raincoat</dt>
-                <dd>A long coat made from waterproofed or water-resistant fabric.
-                    These jackets are popular in colder, wetter environments.</dd>
-                    <dd> <li>Provides dry cover from wet elements, Usually made of a tight weave, with a chemical coating on the outside for an effective hydrophobic treatment.</li></dd>
-            <dt>Parka</dt>
-                <dd>A heavyweight, insulated coat with a hood.</dd>
-                <dd> <li>These coats are made of water-repellent material and insulated with synthetic material or down feathers to keep the wearer warm in extremely cold weather.</li>
-                    <li>Popular for skiing, hiking, and other outdoor activities.</li></dd>
-        </dl>
+
+        <description-elem src="/api/casualFormal/Overcoat">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Raincoat">
+        </description-elem>
+        
+        <description-elem src="/api/casualFormal/Parka">
+        </description-elem>
+
       </section>
     </article>
 
@@ -54,5 +68,13 @@
           </dl>
         </a>
     </nav>
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
   </body>
 </html>

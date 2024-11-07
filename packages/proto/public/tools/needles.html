@@ -4,21 +4,26 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/needle.svg#icon-needle" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
   </head>
 
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/needle.svg#icon-needle" />
+      </svg>
+      <h2>Needles</h2>
+      <svg class="icon">
+        <use href="/icons/needle.svg#icon-needle" />
+      </svg>
+    </header>
+
+    <article>
       <section class="needles"> 
-        <h2>Needles</h2>
         <p>Choosing the right needle-although not imperative for a project-can be the difference between worlds when it comes to ease of machine sewing.
             When working with a difficult fabric of heavier weight, a heavy duty machine with more mechanical power is needed, and a thicker, sharper needle
             is needed to pierce the fabric as well. For lighter fabrics, sharp and thin needles are required to make decisive stitches in the weave.
@@ -39,5 +44,13 @@
       </a>
     </nav>
   
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+    
   </body>
 </html>

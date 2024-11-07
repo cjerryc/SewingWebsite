@@ -4,20 +4,25 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
-
-    <header>
-      <a href="../index.html">&larr; Sewing a Garment</a>
-    </header>
-
-    <svg class="icon">
-      <use href="/icons/patterns.svg#icon-patterns" />
-    </svg>
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
   </head>
 
   <body>
-    <article class="container">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/patterns.svg#icon-patterns" />
+      </svg>
+      <h2>Patterns</h2>
+      <svg class="icon">
+        <use href="/icons/patterns.svg#icon-patterns" />
+      </svg>
+    </header>
+
+    <article>
       <section class="patterns"> 
-        <h2>Patterns</h2>
         <p>Patterns are imperative to creating a well thought out, intentional garment. From a base design, a seamsperson may 
             make necessary adjustment to accommodate the size and dimensions of the intended wearer for a more tailored look.
         </p>
@@ -37,5 +42,13 @@
       </a>
     </nav>
   
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+
   </body>
 </html>

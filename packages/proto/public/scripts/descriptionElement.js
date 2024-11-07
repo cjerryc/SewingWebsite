@@ -23,8 +23,17 @@ export class descriptionElement extends HTMLElement {
   
   renderSlots(json) {
     const entries = Object.entries(json);
-    const toSlot = ([key, value]) =>
-      html`<span slot="${key}">${value}</span>`
+    const toSlot = ([key, value]) =>{
+      switch (typeof value) {
+        case "object":
+        if (Array.isArray(value))
+          return html`<ul slot="${key}">
+          ${value.map((s) => html`<li>${s}</li>`)}
+          </ul>`;
+        default:
+          return html`<span slot="${key}">${value}</span>`;
+        }
+    }
   
     const fragment = entries.map(toSlot);
     this.replaceChildren(...fragment);
@@ -36,9 +45,9 @@ export class descriptionElement extends HTMLElement {
         <h3><slot name="item">item name</slot></h3>
         <slot name="description"> item description </slot>
         <ul>
-        <li><slot name="info"> information </slot></li>
-        </section>
+        <slot name="info"> information </slot>
         </ul>
+        </section>
   </template>
   `;
 

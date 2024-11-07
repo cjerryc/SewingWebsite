@@ -7,7 +7,6 @@ export class descriptionElementPage {
 
   constructor(data: descriptionElement) {
     this.data = data;
-    console.log(data)
   }
 
   render() {
@@ -44,9 +43,7 @@ export class descriptionElementPage {
           <span slot="item">${item}</span>
           <p slot="description">
             ${description}</p>
-            <ul slot="info">
-              ${info.map((a) => html`<li>${a}</li>`)}
-            </ul>
+              ${info.map((a) => html`<p slot="info">${a}</p>`)}
         </description-elem>`;
   }
   }

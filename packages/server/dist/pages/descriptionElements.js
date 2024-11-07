@@ -37,7 +37,6 @@ class descriptionElementPage {
   data;
   constructor(data) {
     this.data = data;
-    console.log(data);
   }
   render() {
     return (0, import_renderPage.default)({
@@ -73,9 +72,7 @@ class descriptionElementPage {
           <span slot="item">${item}</span>
           <p slot="description">
             ${description}</p>
-            <ul slot="info">
-              ${info.map((a) => import_server.html`<li>${a}</li>`)}
-            </ul>
+              ${info.map((a) => import_server.html`<p slot="info">${a}</p>`)}
         </description-elem>`;
   }
 }

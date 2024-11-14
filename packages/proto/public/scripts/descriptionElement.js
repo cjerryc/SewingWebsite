@@ -1,16 +1,12 @@
-import { css, html, shadow } from "@calpoly/mustang";
+import { css, html, shadow, Observer } from "@calpoly/mustang";
 
 export class descriptionElement extends HTMLElement {
   get src() {
     return this.getAttribute("src");
   }
-  
-  connectedCallback() {
-    if (this.src) this.hydrate(this.src);
-  }
 
   hydrate(url) {
-    fetch(url)
+    fetch(url, { headers: this.authorization })
       .then((res) => {
         if (res.status !== 200) throw `Status: ${res.status}`;
         return res.json();
@@ -72,7 +68,25 @@ export class descriptionElement extends HTMLElement {
   constructor() {
     super();
     shadow(this)
-      .template(descriptionElement.template)
+    .template(descriptionElement.template)
     .styles(descriptionElement.styles);
   }
+
+  _authObserver = new Observer(this, "sewing:auth");
+
+  get authorization() {
+    return (
+      this._user?.authenticated && {
+        Authorization: `Bearer ${this._user.token}`
+      }
+    );
+  }
+
+  connectedCallback() {
+    this._authObserver.observe(({ user }) => {
+      this._user = user;
+      if (this.src) this.hydrate(this.src);
+    });
+  }
+  
 }

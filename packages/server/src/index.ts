@@ -3,6 +3,9 @@ import { descriptionElementPage } from "./pages/descriptionElements";
 import descriptionElement from "./services/descriptionElements-svc";
 import { connect } from "./services/mongo";
 import descriptionElements from "./routes/casualFormal";
+import auth, { authenticateUser } from "./routes/auth";
+import { LoginPage } from "./pages/auth";
+
 
 
 // Connect to sewing MongoDB
@@ -14,7 +17,8 @@ const staticDir = process.env.STATIC || "public";
 
 app.use(express.static(staticDir));
 app.use(express.json());
-app.use("/api/casualFormal", descriptionElements);
+app.use("/api/casualFormal", authenticateUser, descriptionElements);
+app.use("/auth", auth);
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");
@@ -33,3 +37,8 @@ app.get("/casualFormal/:clothingId",(req: Request, res: Response) => {
     })
   }
 );
+
+app.get("/login", (req: Request, res: Response) => {
+  const page = new LoginPage();
+  res.set("Content-Type", "text/html").send(page.render());
+});

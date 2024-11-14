@@ -50,7 +50,7 @@
 
     --header-display: flex;
     --header-align-items: baseline;
-    --header-justify-content: center; 
+    --header-justify-content: space-between; 
 
     --container-display: grid;
     --container-template-columns: 0.4fr 0.2fr 0.4fr;
@@ -62,6 +62,7 @@
     --svg-align: top;
     --svg-fill: currentColor;
     --svg-display: inLine;
+    --svg-display-block: block;
   }
   
   body.dark-mode {

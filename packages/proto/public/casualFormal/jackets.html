@@ -13,16 +13,18 @@
       }
     </script>
     <script type="module">
-      import { define } from "@calpoly/mustang";
+      import { define, Auth } from "@calpoly/mustang";
       import { descriptionElement } from "/scripts/descriptionElement.js";
     
       define({
-        "description-elem": descriptionElement
+        "description-elem": descriptionElement,
+        "mu-auth": Auth.Provider
       });
     </script>
   </head>
 
   <body>
+    <mu-auth provides="sewing:auth">
     <header>
       <a href="../index.html">&larr; Sewing a Garment</a>
     </header>
@@ -79,6 +81,6 @@
         Dark mode
       </label>
     </footer>
-
+  </mu-auth>
   </body>
 </html>

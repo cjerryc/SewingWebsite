@@ -6,11 +6,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts/darkmode.js" defer></script>
-
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { HeaderElement } from "/scripts/header.js";
+    
+      define({
+        "username-header": HeaderElement,
+        "mu-auth": Auth.Provider
+      });
+    </script>
   </head>
 
 
   <body>
+    <mu-auth provides="sewing:auth">
     <header>
       <h1>Sewing Garments</h1>
       <p>Making a Piece From Start to Finish</p>
@@ -18,9 +34,11 @@
       <link rel="stylesheet" href="/styles/page.css" />
       <link rel="stylesheet" href="/styles/tokens.css" />
 
-      <svg class="icon">
+      <svg class="logo">
         <use href="/icons/sewingMachine.svg#icon-sewingMachine" />
       </svg>
+
+      <username-header></username-header>
     </header>
     
     <header class="header">
@@ -77,8 +95,7 @@
     <img src="images/landingImage2.jpg" alt="Fabric and Thread">
     <p>An informal almanac on sewing garments: from the bolt to the hanger.</p>
     <img src="images/thread.jpg" alt="Spools of Thread">
-    <!-- <img src="images/sew.jpg" alt="Sewing with a Machine"> -->
-
+    
     <footer class="footer">
       <!-- Dark Mode Checkbox -->
       <label>
@@ -86,6 +103,8 @@
         Dark mode
       </label>
     </footer>
+
+  </mu-auth>
   </body>
   
 </html>

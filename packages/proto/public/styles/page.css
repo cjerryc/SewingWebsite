@@ -29,10 +29,12 @@ header {
     font-family: var(--font-family-display);
     text-align: var(--header-text-align);   
 
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     grid-column-start: var(--grid-column-start);
     grid-column-end: var(--grid-column-end);
     grid-row-start: var(--grid-row-start-h2);
     grid-row-end: var(--grid-row-end-h2);
+
     /* unvisited link */
     a:link {
         color: var(--body-link-unvisited);
@@ -98,6 +100,16 @@ header {
     width: var(--svg-square-length);
     vertical-align: var(--svg-align);
     fill: var(--svg-fill);
+  }
+
+  svg.logo {
+    /* text-align: var(--header-text-align);    */
+    display: var(--svg-display-block);
+    height: var(--svg-square-length);
+    width: var(--svg-square-length);
+    vertical-align: var(--svg-align);
+    fill: var(--svg-fill);
+    margin: auto;
   }
 
 .ulnobullets{

@@ -1,8 +1,17 @@
-import { css, html, shadow, Observer } from "@calpoly/mustang";
+import { define, InputArray, css, html, Form, shadow, Observer } from "@calpoly/mustang";
 
 export class descriptionElement extends HTMLElement {
+  static uses = define({
+    "mu-form": Form.Element,
+    "input-array": InputArray.Element
+  });
+
   get src() {
     return this.getAttribute("src");
+  }
+
+  get form() {
+    return this.shadowRoot.querySelector("mu-form.edit");
   }
 
   hydrate(url) {
@@ -11,7 +20,10 @@ export class descriptionElement extends HTMLElement {
         if (res.status !== 200) throw `Status: ${res.status}`;
         return res.json();
       })
-      .then((json) => this.renderSlots(json))
+      .then((json) => {
+        this.renderSlots(json)
+        this.form.init = json; // populate mu-form
+      })
       .catch((error) =>
         console.log(`Failed to render data ${url}:`, error)
       );
@@ -37,17 +49,57 @@ export class descriptionElement extends HTMLElement {
 
   static template = html`
     <template>
-      <section>
+      <section class="view">
         <h3><slot name="item">item name</slot></h3>
         <slot name="description"> item description </slot>
         <ul>
         <slot name="info"> information </slot>
         </ul>
+        <button id="edit">Edit</button>
         </section>
+
+      <mu-form class="edit">
+      <label>
+        <span>Item Name</span>
+        <input name="item" />
+      </label>
+      <label>
+        <span>Description</span>
+        <input name="description" />
+      </label>
+      <label>
+        <span>Information</span>
+        <input-array name="info">
+          <span slot="label-add">Add</span>
+        <input name="info" />
+        <input-array>
+      </label>
+    </mu-form>
   </template>
   `;
 
-  static styles = css`section {
+  static styles = css`
+  :host {
+  display: contents;
+  }
+  :host([mode="edit"]),
+  :host([mode="new"]) {
+    --display-view-none: none;
+  }
+  :host(:not([mode])),
+  :host([mode="view"]) {
+    --display-editor-none: none;
+  }
+  
+  section.view {
+    display: var(--display-view-none, grid);
+  }
+
+  mu-form.edit {
+    display: var(--display-editor-none, grid);
+  }
+
+  section {
     font-family: var(--font-family-body);
     color: var(--color-text);
     background-color: var(--body-background-color);
@@ -70,6 +122,54 @@ export class descriptionElement extends HTMLElement {
     shadow(this)
     .template(descriptionElement.template)
     .styles(descriptionElement.styles);
+
+    this.editButton.addEventListener(
+      "click",
+      () => (this.mode = "edit")
+    ); 
+
+    this.addEventListener("mu-form:submit", (event) =>
+      this.submit(this.src, event.detail)
+    );   
+  }
+
+  submit(url, json) {
+    const method = this.mode === "new" ? "POST" : "PUT";
+
+    if (this._avatar) json.avatar = this._avatar;
+      fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+          ...this.authorization
+        },
+        body: JSON.stringify(json)
+      })
+      .then((res) => {
+        if (res.status !== 200) throw `Status: ${res.status}`;
+        return res.json();
+      })
+      .then((json) => {
+        console.log("json here:", json);
+        this.renderSlots(json);
+        this.form.init = json;
+        this.mode = "view"; //added to automatically close out of "edit" mode and return to "view" mode
+      })
+      .catch((error) =>
+        console.log(`Failed to render data ${url}:`, error)
+      );
+  }
+
+  get mode() {
+    return this.getAttribute("mode");
+  }
+
+  set mode(m) {
+    this.setAttribute("mode", m);
+  }
+
+  get editButton() {
+    return this.shadowRoot.getElementById("edit");
   }
 
   _authObserver = new Observer(this, "sewing:auth");

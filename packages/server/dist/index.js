@@ -28,6 +28,7 @@ var import_mongo = require("./services/mongo");
 var import_casualFormal = __toESM(require("./routes/casualFormal"));
 var import_auth = __toESM(require("./routes/auth"));
 var import_auth2 = require("./pages/auth");
+var import_auth3 = require("./pages/auth");
 (0, import_mongo.connect)("sewing");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
@@ -54,5 +55,9 @@ app.get(
 );
 app.get("/login", (req, res) => {
   const page = new import_auth2.LoginPage();
+  res.set("Content-Type", "text/html").send(page.render());
+});
+app.get("/register", (req, res) => {
+  const page = new import_auth3.RegistrationPage();
   res.set("Content-Type", "text/html").send(page.render());
 });

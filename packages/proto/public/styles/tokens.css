@@ -47,12 +47,15 @@
     --grid-row-end-h1: 2;
     --grid-row-start-h2: 2;
     --grid-row-end-h2: 3;
+    --grid-row-start-h3: 5;
+    --grid-row-end-h3: 6;
 
     --header-display: flex;
     --header-align-items: baseline;
     --header-justify-content: space-between; 
 
     --container-display: grid;
+    --container-template-rows: repeat(6, 1fr);
     --container-template-columns: 0.4fr 0.2fr 0.4fr;
     --container-grid-column-gap: 10px;
     --container-grid-row-gap: 15px;

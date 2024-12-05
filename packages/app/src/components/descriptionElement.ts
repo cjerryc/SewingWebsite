@@ -1,4 +1,4 @@
-import { define, InputArray, Form, shadow, Observer } from "@calpoly/mustang";
+import { define, InputArray, Form } from "@calpoly/mustang";
 import { LitElement, css, html } from "lit";
 import { property } from "lit/decorators.js";
 import { descriptionElement } from "server/models";

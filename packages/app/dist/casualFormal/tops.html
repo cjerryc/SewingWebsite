@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement,
+        "mu-auth": Auth.Provider
+      });
+    </script>
+  </head>
+
+  <body>
+    <mu-auth provides="sewing:auth">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/tops.svg#icon-tops" />
+      </svg>
+      <h2>Tops</h2>
+      <svg class="icon">
+        <use href="/icons/tops.svg#icon-tops" />
+      </svg>
+    </header>
+
+    <article>
+      <section class="tops"> 
+
+        <description-elem src="/api/casualFormal/Button-Ups">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Button-Downs">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/T-Shirts">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Casual Shirts">
+        </description-elem>
+      </section>
+    </article>
+    
+    <nav class="casualFormalWear">
+      <a href="bottoms.html">
+        <dl>
+          <dt>Pairs well with bottoms.</dt>
+        </dl>
+      </a>
+      <a href="coats.html">
+        <dl>
+          <dt>Pairs well with Coats.</dt>
+        </dl>
+      </a>
+      <a href="jackets.html">
+          <dl>
+            <dt>Pairs well with Jackets.</dt>
+          </dl>
+        </a>
+    </nav>
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+  </mu-auth>
+  </body>
+</html>

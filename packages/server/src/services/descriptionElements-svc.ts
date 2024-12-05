@@ -11,8 +11,9 @@ const decriptionElementSchema = new Schema<descriptionElement>(
   );
   const descriptionElementModel = model<descriptionElement>("Profile", decriptionElementSchema);
 
-  function index(): Promise<descriptionElement[]> {
-    return descriptionElementModel.find();
+  function index(filter: object): Promise<descriptionElement[]> {
+    // console.log("This is the filter: ", filter);
+    return descriptionElementModel.find(filter);
   }
   
   function get(item: String): Promise<descriptionElement> {

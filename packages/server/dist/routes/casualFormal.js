@@ -34,8 +34,9 @@ module.exports = __toCommonJS(casualFormal_exports);
 var import_express = __toESM(require("express"));
 var import_descriptionElements_svc = __toESM(require("../services/descriptionElements-svc"));
 const router = import_express.default.Router();
-router.get("/", (_, res) => {
-  import_descriptionElements_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
+router.get("/", (req, res) => {
+  const classType = req.query.class;
+  import_descriptionElements_svc.default.index({ "class": classType }).then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
 router.get("/:item", (req, res) => {
   const { item } = req.params;

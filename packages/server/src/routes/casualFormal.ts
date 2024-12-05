@@ -5,8 +5,10 @@ import descriptionElements from "../services/descriptionElements-svc";
 
 const router = express.Router();
 
-router.get("/", (_, res: Response) => {
-    descriptionElements.index()
+router.get("/", (req, res: Response) => { 
+    const classType = req.query.class // get class type of garment
+    // console.log("this is the req: ", req);
+    descriptionElements.index({"class": classType})
       .then((list: descriptionElement[]) => res.json(list))
       .catch((err) => res.status(500).send(err));
   });

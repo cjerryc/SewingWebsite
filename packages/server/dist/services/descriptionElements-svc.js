@@ -31,8 +31,8 @@ const decriptionElementSchema = new import_mongoose.Schema(
   { collection: "decriptionElements" }
 );
 const descriptionElementModel = (0, import_mongoose.model)("Profile", decriptionElementSchema);
-function index() {
-  return descriptionElementModel.find();
+function index(filter) {
+  return descriptionElementModel.find(filter);
 }
 function get(item) {
   return descriptionElementModel.find({ item }).then((list) => list[0]).catch((err) => {

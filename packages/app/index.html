@@ -5,6 +5,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
 
     <script type="module">
       import { define, Auth, Events } from "@calpoly/mustang";
@@ -19,18 +22,29 @@
       FooterElement.initializeOnce();
       window.relayEvent = Events.relay;
     </script>
-    <script type="module" src="/src/main"></script>
+    <script type="module" src="/src/main">
+    </script>
   </head>
 
 
   <body>
+    <mu-history provides="sewing:history">
     <mu-auth provides="sewing:auth">
-    <header>
+    <mu-store provides="sewing:model">
+    
+        <article class="page">
+            <mu-switch></mu-switch>
+          </article>
+
+</mu-store>
+</mu-auth>
+</mu-history>
+</body>
+
+</html>
+<!-- <header>
         <h1>Sewing Garments</h1>
         <p>Making a Piece From Start to Finish</p>
-        <link rel="stylesheet" href="/styles/reset.css" />
-        <link rel="stylesheet" href="/styles/page.css" />
-        <link rel="stylesheet" href="/styles/tokens.css" />
     
         <svg class="logo">
             <use href="/icons/sewingMachine.svg#icon-sewingMachine" />
@@ -91,16 +105,4 @@
 
         <img src="./public/images/landingImage2.jpg" alt="Fabric and Thread">
         <p>An informal almanac on sewing garments: from the bolt to the hanger.</p>
-        <img src="./public/images/thread.jpg" alt="Spools of Thread">
-
-        <header class="header3">
-            <sewing-app></sewing-app>
-        </header>
-
-        
-        <sewing-footer></sewing-footer>
-
-</mu-auth>
-</body>
-
-</html>
+        <img src="./public/images/thread.jpg" alt="Spools of Thread"> -->

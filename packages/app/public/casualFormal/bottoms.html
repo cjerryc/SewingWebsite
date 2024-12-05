@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="text/javascript" src="../scripts/darkmode.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+        }
+      }
+    </script>
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { descriptionElement } from "/scripts/descriptionElement.js";
+    
+      define({
+        "description-elem": descriptionElement,
+        "mu-auth": Auth.Provider
+      });
+    </script>
+  </head>
+
+  <body>
+    <mu-auth provides="sewing:auth">
+    <header>
+      <a href="../index.html">&larr; Sewing a Garment</a>
+    </header>
+
+    <header class="header">
+      <svg class="icon">
+        <use href="/icons/bottoms.svg#icon-bottoms" />
+      </svg>
+      <h2>Bottoms</h2>
+      <svg class="icon">
+        <use href="/icons/bottoms.svg#icon-bottoms" />
+      </svg>
+    </header>
+
+    <article>
+      <section class="bottoms"> 
+
+        <description-elem src="/api/casualFormal/Shorts">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Trousers">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Jeans">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Slacks">
+        </description-elem>
+
+        <description-elem src="/api/casualFormal/Chinos">
+        </description-elem>
+      </section>
+    </article>
+
+    <nav class="casualFormalWear">
+      <a href="tops.html">
+        <dl>
+          <dt>Pairs well with tops.</dt>
+        </dl>
+      </a>
+      <a href="coats.html">
+        <dl>
+          <dt>Pairs well with coats.</dt>
+        </dl>
+      </a>
+      <a href="jackets.html">
+          <dl>
+            <dt>Pairs well with jackets.</dt>
+          </dl>
+        </a>
+    </nav>
+
+    <footer class="footer">
+      <!-- Dark Mode Checkbox -->
+      <label>
+        <input type="checkbox" autocomplete="off" id="darkModeToggle"/>
+        Dark mode
+      </label>
+    </footer>
+  </mu-auth>
+  </body>
+</html>
